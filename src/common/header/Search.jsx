@@ -1,13 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
 import logo from "../../components/assets/images/logo.svg";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
+import userImg from "./user.png";
 
 const Search = ({ CartItem }) => {
+  const user = JSON.parse(localStorage.getItem("user"));
+
   // fixed Header
   window.addEventListener("scroll", function () {
     const search = document.querySelector(".search");
     search.classList.toggle("active", window.scrollY > 100);
   });
+
+  const history = useHistory();
 
   return (
     <>
@@ -27,7 +32,34 @@ const Search = ({ CartItem }) => {
           </div>
 
           <div className="icon f_flex width">
-            <i className="fa fa-user icon-circle"></i>
+            {/* <i className="fa fa-user icon-circle"></i> */}
+
+            {user ? (
+              <div className="dropdown">
+                <img
+                  src={user.photoURL}
+                  alt=""
+                  className="icon-circle"
+                  style={{ cursor: "pointer" }}
+                  onClick={() => history.push("/login")}
+                />
+              </div>
+            ) : (
+              <div
+                className="icon-circle"
+                style={{ cursor: "pointer" }}
+                onClick={() => history.push("/login")}>
+                <i className="fa fa-user "></i>
+              </div>
+            )}
+
+            {/* <img
+              src={user ? user.photoURL : userImg}
+              alt=""
+              className="icon-circle"
+              style={{ cursor: "pointer" }}
+              onClick={() => history.push("/login")}
+            /> */}
             <div className="cart">
               <Link to="/cart">
                 <i className="fa fa-shopping-bag icon-circle"></i>
