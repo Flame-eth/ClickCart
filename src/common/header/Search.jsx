@@ -1,9 +1,19 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import logo from "../../components/assets/images/logo.svg";
 import { Link, useHistory } from "react-router-dom";
 import userImg from "./user.png";
 
 const Search = ({ CartItem }) => {
+  const [totalItem, setTotalItem] = useState(0);
+
+  useEffect(() => {
+    let totalItem = 0;
+    for (let index = 0; index < CartItem.length; index++) {
+      totalItem += CartItem[index].qty;
+    }
+    setTotalItem(totalItem);
+  }, [CartItem]);
+
   const user = JSON.parse(localStorage.getItem("user"));
 
   // fixed Header
@@ -50,17 +60,11 @@ const Search = ({ CartItem }) => {
               </div>
             )}
 
-            {/* <img
-              src={user ? user.photoURL : userImg}
-              alt=""
-              className="icon-circle"
-              style={{ cursor: "pointer" }}
-              onClick={() => history.push("/login")}
-            /> */}
             <div className="cart">
               <Link to="/cart">
                 <i className="fa fa-shopping-bag icon-circle"></i>
-                <span>{CartItem.length === 0 ? "" : CartItem.length}</span>
+                {/* <span>{CartItem.length === 0 ? "" : CartItem.length}</span> */}
+                <span>{totalItem}</span>
               </Link>
             </div>
           </div>

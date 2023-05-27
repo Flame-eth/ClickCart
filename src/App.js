@@ -57,10 +57,7 @@ function App() {
     if (productExit.qty === 1) {
       setCartItem(CartItem.filter((item) => item.id !== product.id));
     } else {
-      // if product is exit and qty  of that produt is not equal to 1
-      // then will run function call setCartItem
-      // inside setCartItem we will run map method
-      // this map() will check if item.id match to produt.id  then we have to desc the qty of product by 1
+      
       setCartItem(
         CartItem.map((item) =>
           item.id === product.id

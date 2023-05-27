@@ -55,7 +55,7 @@ const Navbar = () => {
   useEffect(() => {
     const user = localStorage.getItem("user");
     setUser(JSON.parse(user));
-  }, [user]);
+  }, []);
   return (
     <>
       <header className="header">
