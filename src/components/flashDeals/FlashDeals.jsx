@@ -12,9 +12,10 @@ const FlashDeals = ({ productItems, addToCart }) => {
             <i
               className="fa-solid fa-bolt"
               Spin
-              style={{ color: "#120078" }}></i>
+              // style={{ color: "#120078" }}
+            ></i>
 
-            <h1>Flash Delas</h1>
+            <h1 style={{ color: "#120078" }}>Flash Delas</h1>
           </div>
           <FlashCard productItems={productItems} addToCart={addToCart} />
         </div>

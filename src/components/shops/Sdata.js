@@ -56,13 +56,6 @@ const Sdata = {
       price: "120",
       discount: "10",
     },
-    {
-      id: 15,
-      cover: "./images/shops/shops-10.png",
-      name: "Silver Cap",
-      price: "5",
-      discount: "2",
-    },
   ],
-}
-export default Sdata
+};
+export default Sdata;
