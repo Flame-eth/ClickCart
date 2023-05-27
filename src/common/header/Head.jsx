@@ -1,18 +1,18 @@
-import React from "react"
+import React from "react";
 
 const Head = () => {
   return (
     <>
-      <section className='head'>
-        <div className='container d_flex'>
-          <div className='left row'>
-            <i className='fa fa-phone'></i>
-            <label> +88012 3456 7894</label>
-            <i className='fa fa-envelope'></i>
-            <label> support@ui-lib.com</label>
+      <section className="head">
+        <div className="container d_flex">
+          <div className="left row">
+            <i className="fa fa-phone"></i>
+            <label> +11111 2222 3333</label>
+            <i className="fa fa-envelope"></i>
+            <label> support@click-cart.com</label>
           </div>
-          <div className='right row RText'>
-            <label>Theme FAQ"s</label>
+          <div className="right row RText">
+            <label>FAQ</label>
             <label>Need Help?</label>
             <span>🏳️‍⚧️</span>
             <label>EN</label>
@@ -22,7 +22,7 @@ const Head = () => {
         </div>
       </section>
     </>
-  )
-}
+  );
+};
 
-export default Head
+export default Head;

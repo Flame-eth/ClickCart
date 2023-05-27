@@ -1,6 +1,7 @@
 /*------head-----------*/
 .head {
-  background-color: #0f3460;
+  /* background-color: #0f3460; */
+  background-color: #120078;
   padding: 10px 0;
   color: #fff;
 }
@@ -22,6 +23,12 @@
 }
 .search .width {
   width: 20%;
+}
+
+.logo {
+  color: #fd3a69;
+  font-family: "Rubik Puddles", cursive;
+  font-size: 35px;
 }
 .search-box {
   width: 80%;
@@ -91,12 +98,14 @@
 header {
   height: 8vh;
   box-shadow: -1px 15px 17px -8px rgba(0, 0, 0, 0.1);
+  color: #120078;
 }
 header ul {
   line-height: 8vh;
 }
 header ul li {
   margin-left: 30px;
+  color: #120078;
 }
 header ul li a {
   transition: 0.5s;
@@ -104,7 +113,8 @@ header ul li a {
   font-weight: 400;
 }
 header ul li a:hover {
-  color: #ff014f;
+  color: #9d0191;
+  text-decoration: overline;
 }
 
 .open {
@@ -129,7 +139,8 @@ header ul li a:hover {
     position: absolute;
     display: block;
     list-style: none;
-    box-shadow: rgba(50, 50, 93, 0.23) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+    box-shadow: rgba(50, 50, 93, 0.23) 0px 50px 100px -20px,
+      rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
     left: 0;
     top: 0;
     transition: all 0.5s ease-in-out;

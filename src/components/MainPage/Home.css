@@ -27,3 +27,23 @@
   left: 0;
   margin: auto;
 }
+
+.heroText {
+  color: #120078;
+}
+
+.categories {
+  color: #120078;
+}
+
+.button {
+  background-color: #fd3a69;
+  color: #fff;
+  /* padding: 10px 20px; */
+  border-radius: 5px;
+  border: none;
+  /* font-size: 15px; */
+  /* font-weight: 500; */
+  cursor: pointer;
+  transition: 0.3s;
+}
