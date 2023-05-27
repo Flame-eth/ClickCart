@@ -45,10 +45,7 @@ const Search = ({ CartItem }) => {
                 />
               </div>
             ) : (
-              <div
-                className="icon-circle"
-                style={{ cursor: "pointer" }}
-                onClick={() => history.push("/login")}>
+              <div className="icon-circle" style={{ cursor: "pointer" }}>
                 <i className="fa fa-user "></i>
               </div>
             )}

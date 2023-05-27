@@ -1,9 +1,33 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { Link, useHistory } from "react-router-dom";
+import { auth, provider } from "../../googleAuth/config.js";
+import { signInWithPopup } from "firebase/auth";
 
 const Navbar = () => {
   // Toogle Menu
   const [MobileMenu, setMobileMenu] = useState(false);
+
+  const [user, setUser] = useState(null);
+
+  const navigate = useHistory();
+  const handleLogin = () => {
+    signInWithPopup(auth, provider).then((result) => {
+      setUser(result.user);
+      localStorage.setItem("user", JSON.stringify(result.user));
+      window.location.reload();
+    });
+  };
+
+  const handleLogout = () => {
+    localStorage.removeItem("user");
+    setUser(null);
+    window.location.reload();
+  };
+
+  useEffect(() => {
+    const user = localStorage.getItem("user");
+    setUser(JSON.parse(user));
+  }, [user]);
   return (
     <>
       <header className="header">
@@ -27,20 +51,30 @@ const Navbar = () => {
                 <Link to="/">home</Link>
               </li>
               <li>
-                <Link to="/pages">pages</Link>
+                <Link to="/">pages</Link>
               </li>
               <li>
-                <Link to="/user">user account</Link>
+                <Link to="/">user account</Link>
               </li>
               <li>
-                <Link to="/vendor">vendor account</Link>
+                <Link to="/">track my order</Link>
               </li>
               <li>
-                <Link to="/track">track my order</Link>
+                <Link to="/">contact</Link>
               </li>
-              <li>
-                <Link to="/contact">contact</Link>
-              </li>
+              {user ? (
+                <li>
+                  <Link to="/" onClick={handleLogout}>
+                    logout
+                  </Link>
+                </li>
+              ) : (
+                <li>
+                  <Link to="" onClick={handleLogin}>
+                    login
+                  </Link>
+                </li>
+              )}
             </ul>
 
             <button

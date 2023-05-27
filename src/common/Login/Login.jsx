@@ -26,7 +26,7 @@ const Login = () => {
     setUser(JSON.parse(user));
   }, [user]);
 
-  console.log(user);
+
   return (
     <div className="sign-in-container">
       {/* <h2>Sign In with Google</h2> */}
