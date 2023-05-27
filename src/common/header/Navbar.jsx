@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import { Link, useHistory } from "react-router-dom";
 import { auth, provider } from "../../googleAuth/config.js";
 import { signInWithPopup } from "firebase/auth";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Navbar = () => {
   // Toogle Menu
@@ -10,18 +12,44 @@ const Navbar = () => {
   const [user, setUser] = useState(null);
 
   const navigate = useHistory();
-  const handleLogin = () => {
+  const handleLogin = async (e) => {
+    e.preventDefault();
     signInWithPopup(auth, provider).then((result) => {
       setUser(result.user);
       localStorage.setItem("user", JSON.stringify(result.user));
-      window.location.reload();
+      toast.success("Login Successful!", {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+      });
+      setTimeout(() => {
+        window.location.reload();
+      }, 4000);
     });
   };
 
-  const handleLogout = () => {
+  const handleLogout = async (e) => {
+    e.preventDefault();
     localStorage.removeItem("user");
     setUser(null);
-    window.location.reload();
+    toast.success("Logout Successful!", {
+      position: "top-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+    });
+    setTimeout(() => {
+      window.location.reload();
+    }, 4000);
   };
 
   useEffect(() => {
