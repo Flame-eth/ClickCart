@@ -8,7 +8,7 @@ import Cart from "./common/Cart/Cart";
 import Footer from "./common/footer/Footer";
 import Sdata from "./components/shops/Sdata";
 import Login from "./common/Login/Login";
-import { ToastContainer } from "react-toastify";
+import { ToastContainer, toast } from "react-toastify";
 
 function App() {
   /*
@@ -33,7 +33,7 @@ function App() {
   //Step 4 :
   const addToCart = (product) => {
     const productExit = CartItem.find((item) => item.id === product.id);
-  
+
     if (productExit) {
       setCartItem(
         CartItem.map((item) =>
@@ -43,21 +43,28 @@ function App() {
         )
       );
     } else {
-  
       setCartItem([...CartItem, { ...product, qty: 1 }]);
     }
+
+    toast.success(`${product.name} added to cart successfully!`, {
+      position: "top-right",
+      autoClose: 1000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+    });
   };
 
   // Stpe: 6
   const decreaseQty = (product) => {
-
     const productExit = CartItem.find((item) => item.id === product.id);
 
- 
     if (productExit.qty === 1) {
       setCartItem(CartItem.filter((item) => item.id !== product.id));
     } else {
-      
       setCartItem(
         CartItem.map((item) =>
           item.id === product.id
@@ -66,6 +73,17 @@ function App() {
         )
       );
     }
+
+    toast.warning(`${product.name} removed from cart successfully!`, {
+      position: "top-right",
+      autoClose: 1000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+    });
   };
 
   return (
