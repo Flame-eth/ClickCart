@@ -18,7 +18,9 @@ const NewArrivals = () => {
             </div>
           </div>
 
-          <Cart />
+          <div className="cartCon">
+            <Cart />
+          </div>
         </div>
       </section>
     </>

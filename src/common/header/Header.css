@@ -137,6 +137,9 @@ header ul li a:hover {
 }
 
 @media (max-width: 768px) {
+  .logo {
+    font-size: 30px;
+  }
   .headLeft {
     width: 60%;
     float: none;
@@ -201,5 +204,9 @@ header ul li a:hover {
   .search-box input {
     width: 80%;
     padding: 10px;
+  }
+
+  .header {
+    display: none;
   }
 }

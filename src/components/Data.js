@@ -18,14 +18,14 @@ const Data = {
       id: 3,
       discount: 40,
       cover: "./images/flash/flash-3.png",
-      name: "Smart Mobile Black",
+      name: "Smart Mobile",
       price: 200,
     },
     {
       id: 4,
       discount: 40,
       cover: "./images/flash/flash-4.png",
-      name: "Smart Watch Black",
+      name: "Smart Watch",
       price: 50,
     },
     {
@@ -39,9 +39,9 @@ const Data = {
       id: 6,
       discount: 50,
       cover: "./images/flash/flash-3.png",
-      name: "Shoes",
+      name: "Smart Mobile",
       price: 100,
     },
   ],
-}
-export default Data
+};
+export default Data;

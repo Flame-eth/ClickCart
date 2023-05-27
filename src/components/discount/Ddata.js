@@ -6,7 +6,7 @@ const Ddata = [
   },
   {
     cover: "./images/discount/discount-2.png",
-    name: "Sony TV 1080p",
+    name: "Sony TV",
     price: "$450",
   },
   {
@@ -44,5 +44,5 @@ const Ddata = [
     name: "Sony CCTV",
     price: "$80",
   },
-]
-export default Ddata
+];
+export default Ddata;

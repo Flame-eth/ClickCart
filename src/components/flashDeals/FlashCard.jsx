@@ -8,7 +8,7 @@ const SampleNextArrow = (props) => {
   return (
     <div className="control-btn" onClick={onClick}>
       <button className="next">
-        <i className="fa fa-long-arrow-alt-right"x></i>
+        <i className="fa fa-long-arrow-alt-right" x></i>
       </button>
     </div>
   );
@@ -64,9 +64,7 @@ const FlashCard = ({ productItems, addToCart }) => {
                   </div>
                   <div className="price">
                     <h4>${productItems.price}.00 </h4>
-                    {/* step : 3  
-                     if hami le button ma click garryo bahne 
-                    */}
+
                     <button onClick={() => addToCart(productItems)}>
                       <i className="fa fa-plus"></i>
                     </button>
