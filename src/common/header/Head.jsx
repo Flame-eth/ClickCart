@@ -5,7 +5,7 @@ const Head = () => {
     <>
       <section className="head">
         <div className="container d_flex">
-          <div className="left row">
+          <div className="left headLeft">
             <i className="fa fa-phone"></i>
             <label> +11111 2222 3333</label>
             <i className="fa fa-envelope"></i>
@@ -14,9 +14,7 @@ const Head = () => {
           <div className="right row RText">
             <label>FAQ</label>
             <label>Need Help?</label>
-            <span>🏳️‍⚧️</span>
             <label>EN</label>
-            <span>🏳️‍⚧️</span>
             <label>USD</label>
           </div>
         </div>
