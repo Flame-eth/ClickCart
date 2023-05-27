@@ -3,27 +3,27 @@ import React from "react";
 const Catg = () => {
   const data = [
     {
-      cateImg: "./images/category/cat-1.png",
+      cateImg: "./images/category/smartphone.png",
       cateName: "Apple",
     },
     {
-      cateImg: "./images/category/cat-2.png",
-      cateName: "Samasung",
+      cateImg: "./images/category/smartphone.png",
+      cateName: "Samsung",
     },
     {
-      cateImg: "./images/category/cat-1.png",
+      cateImg: "./images/category/smartphone.png",
       cateName: "Oppo",
     },
     {
-      cateImg: "./images/category/cat-2.png",
+      cateImg: "./images/category/smartphone.png",
       cateName: "Vivo",
     },
     {
-      cateImg: "./images/category/cat-1.png",
-      cateName: "Redimi",
+      cateImg: "./images/category/smartphone.png",
+      cateName: "Redmi",
     },
     {
-      cateImg: "./images/category/cat-2.png",
+      cateImg: "./images/category/smartphone.png",
       cateName: "Sony",
     },
   ];
@@ -36,8 +36,8 @@ const Catg = () => {
         </div>
         {data.map((value, index) => {
           return (
-            <div className="box f_flex" key={index}>
-              <img src={value.cateImg} alt="" />
+            <div className="box f_flex brand" key={index}>
+              <img src={value.cateImg} alt="" className="brandIcon" />
               <span>{value.cateName}</span>
             </div>
           );
