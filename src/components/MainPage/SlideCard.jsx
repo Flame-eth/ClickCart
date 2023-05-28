@@ -21,7 +21,7 @@ const SlideCard = () => {
         {Sdata.map((value, index) => {
           return (
             <>
-              <div className="box d_flex top" key={index}>
+              <div className="box d_flex top heroSm" key={index}>
                 <div className="left heroText">
                   <h1>{value.title}</h1>
                   <p>{value.desc}</p>

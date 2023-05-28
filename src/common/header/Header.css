@@ -210,3 +210,31 @@ header ul li a:hover {
     display: none;
   }
 }
+
+@media (max-width: 376px) {
+  .headCon {
+    width: 100%;
+  }
+  .headLeft {
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+  }
+
+  .headCon label {
+    font-size: 10px;
+    margin-right: 10px;
+  }
+
+  .logo h1 {
+    /* font-size: 20px; */
+  }
+
+  .sFilter {
+    display: none;
+    /* position: relative;
+    top: 70px;
+    left: 0px;
+    width: 100%; */
+  }
+}

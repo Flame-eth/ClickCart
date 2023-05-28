@@ -35,7 +35,7 @@ const Search = ({ CartItem }) => {
             {/* <img src={logo} alt='' /> */}
           </div>
 
-          <div className="search-box f_flex">
+          <div className="search-box f_flex sFilter">
             <i className="fa fa-search"></i>
             <input type="text" placeholder="Search and hit enter..." />
             <span className="searchSubmit">All Category</span>
