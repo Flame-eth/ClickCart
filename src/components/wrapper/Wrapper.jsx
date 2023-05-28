@@ -26,11 +26,11 @@ const Wrapper = () => {
   ];
   return (
     <>
-      <section className="wrapper background">
-        <div className="container grid2 offerCon">
+      <section className="wrapper background ">
+        <div className="container grid2 offerCon wrapperSm">
           {data.map((val, index) => {
             return (
-              <div className="product" key={index}>
+              <div className="product " key={index}>
                 <div className="img ">
                   <i>{val.cover}</i>
                 </div>

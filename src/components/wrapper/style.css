@@ -33,3 +33,11 @@
   margin-top: 20px;
   color: grey;
 }
+
+@media (max-width: 768px) {
+  .wrapperSm {
+    display: flex;
+    /* flex-direction: column; */
+    flex-wrap: wrap;
+  }
+}

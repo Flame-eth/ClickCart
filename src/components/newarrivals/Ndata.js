@@ -10,11 +10,6 @@ const Ndata = [
     price: "250",
   },
   {
-    cover: "./images/arrivals/arrivals3.png",
-    name: "Smart Watch",
-    price: "50",
-  },
-  {
     cover: "./images/arrivals/arrivals4.png",
     name: "Lipstick",
     price: "15",
@@ -29,6 +24,6 @@ const Ndata = [
     name: "Bonsai tree",
     price: "400",
   },
-]
+];
 
-export default Ndata
+export default Ndata;
