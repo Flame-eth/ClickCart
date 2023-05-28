@@ -17,9 +17,8 @@ const Footer = () => {
               {/* <img src={logo} alt='' /> */}
             </div>
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Auctor
-              libero id et, in gravida. Sit diam duis mauris nulla cursus. Erat
-              et lectus vel ut sollicitudin elit at amet.
+              Your one-stop-shop for all your shopping needs. We are here to
+              provide you with the best quality products at the best prices.
             </p>
             <div className="icon fIcons">
               <div className="img d_flex">

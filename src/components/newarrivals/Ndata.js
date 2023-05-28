@@ -10,6 +10,11 @@ const Ndata = [
     price: "250",
   },
   {
+    cover: "./images/arrivals/arrivals3.jpg",
+    name: "Smart Watch",
+    price: "50",
+  },
+  {
     cover: "./images/arrivals/arrivals4.png",
     name: "Lipstick",
     price: "15",

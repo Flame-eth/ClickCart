@@ -69,3 +69,20 @@ footer .footer .box {
   margin-bottom: 20px;
   cursor: pointer;
 }
+
+@media (max-width: 768px) {
+  footer .footer {
+    flex-direction: column;
+    gap: 30px;
+  }
+  footer .footer .fLogoCon {
+    width: 100%;
+  }
+  footer .footer .boxCon {
+    width: 100%;
+    gap: 8px;
+  }
+  footer .footer .box {
+    width: 100%;
+  }
+}

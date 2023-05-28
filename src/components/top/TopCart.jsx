@@ -8,14 +8,14 @@ const TopCart = () => {
   const userWidth = window.innerWidth;
   // console.log(userWidth);
 
-  let noOfSlides = 2;
+  let noOfSlides = 3;
 
   if (userWidth >= 1200) {
-    noOfSlides = 2;
+    noOfSlides = 3;
   } else if (userWidth >= 992) {
     noOfSlides = 2;
   } else if (userWidth >= 650) {
-    noOfSlides = 1;
+    noOfSlides = 2;
   } else if (userWidth >= 500) {
     noOfSlides = 1;
   } else if (userWidth >= 320) {
