@@ -134,6 +134,8 @@ header ul li a:hover {
 .headLeft {
   width: 50%;
   float: left;
+  display: flex;
+  flex-direction: row;
 }
 
 @media (max-width: 768px) {
