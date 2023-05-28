@@ -211,7 +211,7 @@ header ul li a:hover {
   }
 }
 
-@media (max-width: 376px) {
+@media (max-width: 750px) {
   .headCon {
     width: 100%;
   }

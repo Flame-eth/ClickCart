@@ -58,7 +58,7 @@
   }
 }
 
-@media (max-width: 380px) {
+@media (max-width: 750px) {
   .heroSm {
     display: flex;
     flex-direction: column-reverse;

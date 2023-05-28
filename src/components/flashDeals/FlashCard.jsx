@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -28,11 +28,29 @@ const FlashCard = ({ productItems, addToCart }) => {
   const increment = () => {
     setCount(count + 1);
   };
+
+  const userWidth = window.innerWidth;
+  // console.log(userWidth);
+
+  let noOfSlides = 4;
+
+  if (userWidth >= 1200) {
+    noOfSlides = 4;
+  } else if (userWidth >= 992) {
+    noOfSlides = 3;
+  } else if (userWidth >= 650) {
+    noOfSlides = 2;
+  } else if (userWidth >= 500) {
+    noOfSlides = 2;
+  } else if (userWidth >= 320) {
+    noOfSlides = 1;
+  }
+
   const settings = {
     dots: false,
     infinite: true,
     speed: 500,
-    slidesToShow: 4,
+    slidesToShow: noOfSlides,
     slidesToScroll: 1,
     nextArrow: <SampleNextArrow />,
     prevArrow: <SamplePrevArrow />,
