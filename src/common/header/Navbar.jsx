@@ -5,18 +5,23 @@ import { signInWithPopup } from "firebase/auth";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-const Navbar = () => {
+import { connect } from "react-redux";
+import { setCurrentUser } from "../../redux/user/user.actions.js";
+
+const Navbar = ({ user, setCurrentUser }) => {
   // Toogle Menu
+
+  console.log(user);
   const [MobileMenu, setMobileMenu] = useState(false);
 
-  const [user, setUser] = useState(null);
+  // const [user, setUser] = useState(null);
 
   const navigate = useHistory();
   const handleLogin = async (e) => {
     e.preventDefault();
     signInWithPopup(auth, provider).then((result) => {
-      setUser(result.user);
-      localStorage.setItem("user", JSON.stringify(result.user));
+      setCurrentUser(result.user);
+      // localStorage.setItem("user", JSON.stringify(result.user));
       toast.success("Login Successful!", {
         position: "top-right",
         autoClose: 5000,
@@ -36,7 +41,7 @@ const Navbar = () => {
   const handleLogout = async (e) => {
     e.preventDefault();
     localStorage.removeItem("user");
-    setUser(null);
+    setCurrentUser(null);
     toast.success("Logout Successful!", {
       position: "top-right",
       autoClose: 5000,
@@ -52,16 +57,16 @@ const Navbar = () => {
     }, 4000);
   };
 
-  useEffect(() => {
-    const user = localStorage.getItem("user");
-    setUser(JSON.parse(user));
-  }, []);
+  // useEffect(() => {
+  //   const user = localStorage.getItem("user");
+  //   // setUser(JSON.parse(user));
+  // }, []);
   return (
     <>
       <header className="header">
         <div className="container d_flex">
           <div className="catgrories d_flex categories">
-            <span class="fa-solid fa-border-all"></span>
+            <span className="fa-solid fa-border-all"></span>
             <h4>
               Categories
               {/* <i className='fa fa-chevron-down'></i> */}
@@ -113,4 +118,12 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;
+const mapStateToProps = (state) => ({
+  user: state.user.currentUser,
+});
+
+const mapDispatchToProps = (dispatch) => ({
+  setCurrentUser: (user) => dispatch(setCurrentUser(user)),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Navbar);

@@ -11,17 +11,7 @@ import Login from "./common/Login/Login";
 import { ToastContainer, toast } from "react-toastify";
 
 function App() {
-  /*
-  step1 :  const { productItems } = Data 
-  lai pass garne using props
-  
-  Step 2 : item lai cart ma halne using useState
-  ==> CartItem lai pass garre using props from  <Cart CartItem={CartItem} /> ani import garrxa in cartItem ma
- 
-  Step 3 :  chai flashCard ma xa button ma
 
-  Step 4 :  addToCart lai chai pass garne using props in pages and cart components
-  */
 
   //Step 1 :
   const { productItems } = Data;

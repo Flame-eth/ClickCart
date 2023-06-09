@@ -20,20 +20,18 @@ const SlideCard = () => {
       <Slider {...settings}>
         {Sdata.map((value, index) => {
           return (
-            <>
-              <div className="box d_flex top heroSm" key={index}>
-                <div className="left heroText">
-                  <h1>{value.title}</h1>
-                  <p>{value.desc}</p>
-                  <button className="btn-primary button">
-                    Visit Collections
-                  </button>
-                </div>
-                <div className="right">
-                  <img src={value.cover} alt="" />
-                </div>
+            <div className="box d_flex top heroSm" key={index}>
+              <div className="left heroText">
+                <h1>{value.title}</h1>
+                <p>{value.desc}</p>
+                <button className="btn-primary button">
+                  Visit Collections
+                </button>
               </div>
-            </>
+              <div className="right">
+                <img src={value.cover} alt="" />
+              </div>
+            </div>
           );
         })}
       </Slider>

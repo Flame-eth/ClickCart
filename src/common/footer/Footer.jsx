@@ -22,11 +22,11 @@ const Footer = () => {
             </p>
             <div className="icon fIcons">
               <div className="img d_flex">
-                <i class="fa-brands fa-google-play"></i>
+                <i className="fa-brands fa-google-play"></i>
                 <span>Google Play</span>
               </div>
               <div className="img d_flex">
-                <i class="fa-brands fa-app-store-ios"></i>
+                <i className="fa-brands fa-app-store-ios"></i>
                 <span>App Store</span>
               </div>
             </div>

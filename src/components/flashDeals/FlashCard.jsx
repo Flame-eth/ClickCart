@@ -8,7 +8,7 @@ const SampleNextArrow = (props) => {
   return (
     <div className="control-btn" onClick={onClick}>
       <button className="next">
-        <i className="fa fa-long-arrow-alt-right" x></i>
+        <i className="fa fa-long-arrow-alt-right"></i>
       </button>
     </div>
   );
@@ -59,9 +59,9 @@ const FlashCard = ({ productItems, addToCart }) => {
   return (
     <>
       <Slider {...settings}>
-        {productItems.map((productItems) => {
+        {productItems.map((productItems, index) => {
           return (
-            <div className="box">
+            <div className="box" key={index}>
               <div className="product mtop">
                 <div className="img">
                   <span className="discount">{productItems.discount}% Off</span>

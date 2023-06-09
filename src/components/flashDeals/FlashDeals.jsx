@@ -11,7 +11,7 @@ const FlashDeals = ({ productItems, addToCart }) => {
             {/* <i className="fa fa-bolt"></i> */}
             <i
               className="fa-solid fa-bolt"
-              Spin
+
               // style={{ color: "#120078" }}
             ></i>
 
