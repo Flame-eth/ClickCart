@@ -2,10 +2,11 @@ import React, { useEffect, useState } from "react";
 import logo from "../../components/assets/images/logo.svg";
 import { Link, useHistory } from "react-router-dom";
 import userImg from "./user.png";
+import { connect } from "react-redux";
 
-const Search = ({ CartItem }) => {
+const Search = ({ user, CartItem }) => {
   const [totalItem, setTotalItem] = useState(0);
-
+  console.log(user);
   useEffect(() => {
     let totalItem = 0;
     for (let index = 0; index < CartItem.length; index++) {
@@ -13,8 +14,6 @@ const Search = ({ CartItem }) => {
     }
     setTotalItem(totalItem);
   }, [CartItem]);
-
-  const user = JSON.parse(localStorage.getItem("user"));
 
   // fixed Header
   window.addEventListener("scroll", function () {
@@ -74,4 +73,8 @@ const Search = ({ CartItem }) => {
   );
 };
 
-export default Search;
+const mapStateToProps = (state) => ({
+  user: state.user.currentUser,
+});
+
+export default connect(mapStateToProps)(Search);

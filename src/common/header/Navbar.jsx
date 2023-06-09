@@ -11,7 +11,7 @@ import { setCurrentUser } from "../../redux/user/user.actions.js";
 const Navbar = ({ user, setCurrentUser }) => {
   // Toogle Menu
 
-  console.log(user);
+  // console.log(user);
   const [MobileMenu, setMobileMenu] = useState(false);
 
   // const [user, setUser] = useState(null);
@@ -20,11 +20,12 @@ const Navbar = ({ user, setCurrentUser }) => {
   const handleLogin = async (e) => {
     e.preventDefault();
     signInWithPopup(auth, provider).then((result) => {
+      // console.log(result.user);
       setCurrentUser(result.user);
-      // localStorage.setItem("user", JSON.stringify(result.user));
+      localStorage.setItem("user", JSON.stringify(result.user));
       toast.success("Login Successful!", {
         position: "top-right",
-        autoClose: 5000,
+        autoClose: 2000,
         hideProgressBar: false,
         closeOnClick: true,
         pauseOnHover: true,
@@ -32,9 +33,6 @@ const Navbar = ({ user, setCurrentUser }) => {
         progress: undefined,
         theme: "light",
       });
-      setTimeout(() => {
-        window.location.reload();
-      }, 4000);
     });
   };
 
@@ -44,7 +42,7 @@ const Navbar = ({ user, setCurrentUser }) => {
     setCurrentUser(null);
     toast.success("Logout Successful!", {
       position: "top-right",
-      autoClose: 5000,
+      autoClose: 1000,
       hideProgressBar: false,
       closeOnClick: true,
       pauseOnHover: true,
@@ -52,15 +50,15 @@ const Navbar = ({ user, setCurrentUser }) => {
       progress: undefined,
       theme: "light",
     });
-    setTimeout(() => {
-      window.location.reload();
-    }, 4000);
+    // setTimeout(() => {
+    //   window.location.reload();
+    // }, 4000);
   };
 
-  // useEffect(() => {
-  //   const user = localStorage.getItem("user");
-  //   // setUser(JSON.parse(user));
-  // }, []);
+  useEffect(() => {
+    const user = localStorage.getItem("user");
+    setCurrentUser(JSON.parse(user));
+  }, []);
   return (
     <>
       <header className="header">

@@ -4,28 +4,24 @@ import { useHistory } from "react-router-dom";
 
 import { auth, provider } from "../../googleAuth/config.js";
 import { signInWithPopup } from "firebase/auth";
-const Login = () => {
-  const [user, setUser] = useState(null);
+import { connect } from "react-redux";
+import { setCurrentUser } from "../../redux/user/user.actions.js";
 
+const Login = ({ user, setCurrentUser }) => {
+  // console.log(user);
   const navigate = useHistory();
   const handleClick = () => {
     signInWithPopup(auth, provider).then((result) => {
-      setUser(result.user);
-      localStorage.setItem("user", JSON.stringify(result.user));
+      setCurrentUser(result.user);
+      // localStorage.setItem("user", JSON.stringify(result.user));
       navigate.push("/");
     });
   };
 
   const handleLogout = () => {
     localStorage.removeItem("user");
-    setUser(null);
+    setCurrentUser(null);
   };
-
-  useEffect(() => {
-    const user = localStorage.getItem("user");
-    setUser(JSON.parse(user));
-  }, [user]);
-
 
   return (
     <div className="sign-in-container">
@@ -37,7 +33,6 @@ const Login = () => {
         <span className="google-icon"></span>
         Sign In with Google
       </button>
-
       <button
         className="google-sign-in-button"
         onClick={handleLogout}
@@ -49,4 +44,12 @@ const Login = () => {
   );
 };
 
-export default Login;
+const mapStateToProps = (state) => ({
+  user: state.user.currentUser,
+});
+
+const mapDispatchToProps = (dispatch) => ({
+  setCurrentUser: (user) => dispatch(setCurrentUser(user)),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Login);

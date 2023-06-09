@@ -24,7 +24,7 @@ const Cart = ({ CartItem, addToCart, decreaseQty }) => {
 
               return (
                 <div className="cart-list product d_flex" key={item.id}>
-                  <div className="">
+                  <div className="cart-list-con">
                     <div className="img">
                       <img src={item.cover} alt="" />
                     </div>
